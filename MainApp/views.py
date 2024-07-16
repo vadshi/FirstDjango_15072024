@@ -3,13 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-author = {
-    "Имя": "Иван",
-    "Отчество": "Петрович",
-    "Фамилия": "Иванов",
-    "телефон": "8-923-600-01-02",
-    "email": "vasya@mail.ru"
-}
+
 
 items = [
    {"id": 1, "name": "Кроссовки abibas" ,"quantity":5},
@@ -29,14 +23,15 @@ def home(request):
 
 
 def about(request):
-    text = f"""
-    Имя: {author["Имя"]}<br>
-    Отчество: {author["Отчество"]}<br>
-    Фамилия: {author["Фамилия"]}<br>
-    телефон: {author['телефон']}<br>
-    email: {author["email"]}
-    """
-    return HttpResponse(text)
+    author = {
+        "name": "Иван",
+        "middle_name": "Петрович",
+        "last_name": "Иванов",
+        "phone": "8-923-600-01-02",
+        "email": "vasya@mail.ru"
+    }
+
+    return render(request, "about.html", {"author": author})
 
 
 # /item/1 
