@@ -34,20 +34,14 @@ def about(request):
     return render(request, "about.html", {"author": author})
 
 
-# /item/1 
-# /item/2
-# ...
-# /item/n
 def get_item(request, item_id):
     """ По указанному id возвращает элемент из списка. """
-    for item in items:
-        if item['id'] == item_id:
-            result = f"""
-            <h2> Имя: {item['name']} </h2>
-            <p> Количество: {item['quantity']} </p>
-            <p> <a href='/items'>Назад к списку товаров</a> </p>
-            """
-            return HttpResponse(result)
+    item = next((item for item in items if item["id"] == item_id), None)
+    if item is not None:
+        context = {
+            "item": item
+        }
+        return render(request, 'item_page.html', context)
     return HttpResponseNotFound(f"Товар с id={item_id} не найден")
 
 
