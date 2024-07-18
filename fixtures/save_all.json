@@ -1,12 +1,30 @@
 [
 {
+    "model": "MainApp.color",
+    "pk": 1,
+    "fields": {
+        "name": "red"
+    }
+},
+{
+    "model": "MainApp.color",
+    "pk": 2,
+    "fields": {
+        "name": "green"
+    }
+},
+{
     "model": "MainApp.item",
     "pk": 1,
     "fields": {
         "name": "Кроссовки",
         "brand": "abibas",
         "count": 10,
-        "description": "Базовое описание"
+        "description": "Удобные кроссовки на каждый день",
+        "colors": [
+            1,
+            2
+        ]
     }
 },
 {
@@ -16,7 +34,10 @@
         "name": "Куртка кожаная",
         "brand": "nuke",
         "count": 2,
-        "description": "Базовое описание"
+        "description": "Теплая красивая",
+        "colors": [
+            1
+        ]
     }
 },
 {
@@ -26,7 +47,8 @@
         "name": "Coca-cola 1 литр",
         "brand": "coca-cola",
         "count": 12,
-        "description": "Базовое описание"
+        "description": "Вкусная",
+        "colors": []
     }
 },
 {
@@ -36,7 +58,8 @@
         "name": "Картофель фри",
         "brand": "вкусно и",
         "count": 0,
-        "description": "Базовое описание"
+        "description": "Большая порция",
+        "colors": []
     }
 },
 {
@@ -46,7 +69,8 @@
         "name": "Кепка",
         "brand": "textil group",
         "count": 124,
-        "description": "Базовое описание"
+        "description": "Стильная",
+        "colors": []
     }
 }
 ]
