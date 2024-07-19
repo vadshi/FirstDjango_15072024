@@ -32,7 +32,10 @@ def get_item(request, item_id):
     except ObjectDoesNotExist:
         return HttpResponseNotFound(f"Товар с id={item_id} не найден")
     else:
-        context = {"item": item}
+        context = {
+            "item": item,
+            "colors": item.colors.all()
+            }
         return render(request, 'item_page.html', context)
     
 
